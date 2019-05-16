@@ -24,6 +24,8 @@ namespace Askmethat.Aspnet.JsonLocalizer.TestSample
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            // If we want to generally lingualize data annotations we can add this middleware.
+            // Otherwise e.g. required DataAnnotations needs to be provided with an ErrorMessage as parameter when used.
             services.AddSingleton<IValidationAttributeAdapterProvider, LocalizedValidationAttributeAdapterProvider>();
 
             services.AddMvc()
